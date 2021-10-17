@@ -1,0 +1,22 @@
+import java.util.Scanner;/*Cистема консольного ввода реализуется с использованием класса Scanner.
+Класс должен быть испортирован в прогрумму, для чего используется вышеуказанная инструкция.
+*/
+
+public class DisplayingrgumentsInReverseOrder { //мой класс "Отображение аргументов в обратном порядке"
+
+    public static void main(String[] args) {
+        System.out.print("Enter argument and press <Enter>:");//введите аргумент и нажмите ENTER.
+        Scanner inputString = new Scanner(System.in);/*на основе класса Scanner необходимо создать "объект"
+        и указать его название (по своему усмотрению).
+        */
+        String name = inputString.next();/*вызом метода, могут быть (подробнее можно почитать здесь:
+        https://javarush.ru/groups/posts/klass-scanner)
+        */
+        String reversedString = new StringBuffer(name).reverse().toString();/*создаем объект с использованием
+        класса StringBuffer (StringBuilder, почти похожи), используем метод reverse для изменения строки на
+        обратный порядок и с помощью метода toString получаем строку из класса StringBuffer.
+        */
+        System.out.println(reversedString);//вывод аргументов в консоль.
+        inputString.close();//сканер должен быть закрыт по завершении своей работы, чтобы больше не потреблять ресурсы нашего компьютера.
+    }
+}
